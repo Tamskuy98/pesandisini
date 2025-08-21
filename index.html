@@ -4,13 +4,9 @@
     <meta charset="utf-8" />
     <title>Pesan Disini</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
-
-    <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
 
-    <!-- Google Web Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +14,7 @@
       rel="stylesheet"
     />
 
-    <!-- Icon Font Stylesheet -->
+    <!-- Icons -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
       rel="stylesheet"
@@ -28,7 +24,8 @@
       rel="stylesheet"
     />
 
-    <!-- Libraries Stylesheet -->
+
+    <!-- Libraries -->
     <link href="lib/animate/animate.min.css" rel="stylesheet" />
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link
@@ -36,7 +33,7 @@
       rel="stylesheet"
     />
 
-    <!-- Customized Bootstrap Stylesheet -->
+    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
@@ -60,22 +57,21 @@
       </div>
       <!-- Spinner End -->
 
-      <!-- Navbar & Hero Start -->
-      <!-- Navbar & Hero End -->
-
       <!-- Menu Start -->
       <div class="container-xxl py-5">
         <div class="container">
           <!-- Logo -->
-          
-          
-          <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
-           <div style="width: 100px; height: 80px;">
-             <img src="img/logo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain;" />
-           </div>
+          <div
+            style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;"
+          >
+            <div style="width: 100px; height: 80px;">
+              <img
+                src="img/logo.png"
+                alt="Logo"
+                style="width: 100%; height: 100%; object-fit: contain;"
+              />
+            </div>
           </div>
-          
-          
 
           <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h5
@@ -85,10 +81,38 @@
             </h5>
             <h4 class="mb-5">Most Popular Menu of RajaCirengBekasi</h4>
           </div>
+
           <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
             <div class="tab-content">
               <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
+                  <!-- Menu Items -->
+                  <!-- <div class="col-lg-6">
+                    <div class="d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded"
+                        src="img/menu-1.png"
+                        style="width: 80px; height: 80px"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                          <span>Ayam Pedas</span>
+                          <input
+                            type="number"
+                            id="ayamPedas"
+                            class="form-control ms-3"
+                            style="width: 60px; height: 40px; border-radius: 0"
+                          />
+                        </h5>
+                        <small class="fst-italic">Rp.2000/pcs</small>
+                      </div>
+                    </div>
+                  </div> -->
+
+
+                  <!-- Tambahkan menu lain (ayamOri, keju, dll) sesuai struktur di atas -->
+
                   <div class="col-lg-6">
                     <div class="d-flex align-items-center">
                       <img
@@ -364,50 +388,67 @@
                     </div>
                   </div>
 
-                  <!-- center numberPhone -->
-                 <!-- <div class="col-lg-6 mb-5">
-                   <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                      <div class="mb-2 small"><p style="font-style: italic; font-size: 10px;"></p>Masukkan nomor telepon untuk konfirmasi pesanan (menggunakan format 62)</p></div>
-                        <input id="numberPhone" type="text" class="form-control w-75" placeholder="cth: 62813834744xxxx" />
-                      </div>
-                   </div>   
-                 </div> -->
 
-                  <!-- center buttonPesan -->
-                  <div class="col-lg-6">
-                    <div class="d-flex align-items-center">
-                      <a
-                        href="#"
-                        onclick="kirimPesanWA()"
-                        class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft"
-                        >PESAN</a
-                      >
-                    </div> 
-                  </div>
-                
+
+                  <!-- ... -->
                 </div>
-                
-                
-
               </div>
             </div>
           </div>
+
+          <!-- Phone number centered -->
+          <div class="row justify-content-center my-4">
+            <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+              <div class="text-center mb-2">
+                <small class="fst-italic">Masukkan nomor telepon untuk konfirmasi pesanan (format 62)</small>
+              </div>
+              <input
+                id="numberPhone"
+                type="text"
+                class="form-control text-center"
+                placeholder="cth: 62813834744xxxx"
+              />
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="text-center">
+            <a
+              href="#"
+              id="btnPesan"
+              onclick="kirimPesanWABot(event)"
+              class="btn btn-primary py-sm-3 px-sm-5"
+            >PESAN</a>
+          </div>
         </div>
       </div>
-
       <!-- Menu End -->
-
-      <!-- Footer Start -->
-
-      <!-- Footer End -->
-
-      <!-- Back to Top -->
-      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-        ><i class="bi bi-arrow-up"></i
-      ></a>
     </div>
 
-    <!-- JavaScript Libraries -->
+    <!-- Modal Response -->
+    <div class="modal fade" id="respModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Notifikasi Pesanan</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Tutup"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p id="respMessage" class="mb-0"></p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -418,154 +459,98 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
-  </body>
 
-  <script>
-    function kirimPesanWA() {
-      const getValue = (id) => document.getElementById(id).value || "";
+    <script>
+      function setLoading(isLoading) {
+        const btn = document.getElementById("btnPesan");
+        if (!btn) return;
+        btn.disabled = isLoading;
+        btn.innerText = isLoading ? "MENGIRIM..." : "PESAN";
+      }
 
-      const pesan = `
- Halo Kak Admin Rajacirengbekasi🙌
- Saya ingin melakukan pemesanan dengan rincian sebagai berikut:
+      function clearAllInputs() {
+        const ids = [
+          "ayamPedas","ayamOri","keju","bakso","sosis",
+          "atiAmpela","tetelan","usus","seblak","numberPhone"
+        ];
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.value = "";
+        });
+      }
 
-  List pesanan
-* Ayam pedas: ${getValue("ayamPedas")}
-* Ayam ori: ${getValue("ayamOri")}
-* Keju: ${getValue("keju")}
-* Bakso: ${getValue("bakso")}
-* Sosis: ${getValue("sosis")}
-* Ati ampela: ${getValue("atiAmpela")}
-* Tetelan: ${getValue("tetelan")}
-* Usus: ${getValue("usus")}
-* Seblak: ${getValue("seblak")}
+      function buildOrder() {
+        const getVal = (id) => (document.getElementById(id)?.value || "").trim();
+        const raw = [
+          { menu: "ayamPedas", quantity: getVal("ayamPedas") },
+          { menu: "ayamOri",   quantity: getVal("ayamOri") },
+          { menu: "keju",      quantity: getVal("keju") },
+          { menu: "bakso",     quantity: getVal("bakso") },
+          { menu: "sosis",     quantity: getVal("sosis") },
+          { menu: "atiAmpela", quantity: getVal("atiAmpela") },
+          { menu: "tetelan",   quantity: getVal("tetelan") },
+          { menu: "usus",      quantity: getVal("usus") },
+          { menu: "seblak",    quantity: getVal("seblak") }
+        ];
+        return raw.filter(i => i.quantity && i.quantity !== "0");
+      }
 
-Mohon balas dan konfirmasi pengiriman dan informasi pembayaran nya ya, Kak. Terima kasih!
-  `;
+      async function kirimPesanWABot(e) {
+        if (e) e.preventDefault();
 
-      const encodedPesan = encodeURIComponent(pesan);
-      const nomorWA = "+6285212325187";
-      const urlWA = `https://wa.me/${nomorWA}?text=${encodedPesan}`;
+        const numberPhone = (document.getElementById("numberPhone")?.value || "").trim();
+        const order = buildOrder();
 
-      window.open(urlWA, "_blank");
-    }
-  </script>
-
-
-
-
-<script>
-   function kirimPesanWABotx() {
-  const getValue = (id) => document.getElementById(id).value || "";
-  const numberPhone = document.getElementById("numberPhone").value || "";
-
-  const data = {
-    numberPhone: numberPhone,
-    order: [
-      { menu: "ayamPedas", quantity: `${getValue("ayamPedas")}` },
-      { menu: "ayamOri", quantity: `${getValue("ayamOri")}` },
-      { menu: "keju", quantity: `${getValue("keju")}` },
-      { menu: "bakso", quantity: `${getValue("bakso")}` },
-      { menu: "sosis", quantity: `${getValue("sosis")}` },
-      { menu: "atiAmpela", quantity: `${getValue("atiAmpela")}` },
-      { menu: "tetelan", quantity: `${getValue("tetelan")}` },
-      { menu: "usus", quantity: `${getValue("usus")}` },
-      { menu: "seblak", quantity: `${getValue("seblak")}` }
-    ]
-  }
-
-  if(!data){
-    console.log("gagalhit");
-  }
-  console.log("berhasilhit");
-  fetch('http://localhost:3000/sendwa', {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(data)
-
-      }).then(Response => {
-        if(!response.ok){
-          console.log("gagal hit sudah masuk fetch")
-          throw new Error(`HTTP error! status: ${response.status}`);
+        if (!numberPhone) {
+          showModal("Nomor telepon wajib diisi (format 62...).");
+          return;
         }
-        console.log(Response.json());
-        return Response.json();
-      })
+        if (!numberPhone.startsWith("62")) {
+          showModal("Nomor telepon harus diawali 62 (tanpa +).");
+          return;
+        }
+        if (order.length === 0) {
+          showModal("Minimal pilih 1 menu dengan jumlah > 0.");
+          return;
+        }
 
+        const payload = { numberPhone, order };
 
-}
-</script>
+        setLoading(true);
+        try {
+          const res = await fetch("https://pesandisinibe-production.up.railway.app/sendwa", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
 
+          if (!res.ok) {
+            const text = await res.text().catch(() => "");
+            throw new Error(text || `HTTP ${res.status}`);
+          }
 
-<script>
+          const json = await res.json().catch(() => ({}));
+          const msg = json?.message || json?.data?.success || "Berhasil mengirim pesanan.";
+          showModal(msg);
+          clearAllInputs();
+        } catch (err) {
+          console.error(err);
+          showModal("Gagal mengirim pesanan. Coba lagi sebentar.");
+        } finally {
+          setLoading(false);
+        }
+      }
 
-  function kirimPesanWABot (){
-  
-  const getValue = (id) => document.getElementById(id).value || "";
-  const numberPhone = document.getElementById("numberPhone").value || "";
-  
-  const rawOrder = [
-      { menu: "ayamPedas", quantity: `${getValue("ayamPedas")}` },
-      { menu: "ayamOri", quantity: `${getValue("ayamOri")}` },
-      { menu: "keju", quantity: `${getValue("keju")}` },
-      { menu: "bakso", quantity: `${getValue("bakso")}` },
-      { menu: "sosis", quantity: `${getValue("sosis")}` },
-      { menu: "atiAmpela", quantity: `${getValue("atiAmpela")}` },
-      { menu: "tetelan", quantity: `${getValue("tetelan")}` },
-      { menu: "usus", quantity: `${getValue("usus")}` },
-      { menu: "seblak", quantity: `${getValue("seblak")}` }
-];
-
-
-// Hilangkan item yang kosong atau nol
-const filteredOrder = rawOrder.filter(item => item.quantity && item.quantity !== "0");
-
-const postData = {
-  data: [
-    { numberPhone: numberPhone },
-    { order: filteredOrder }
-  ]
-};
-
-
-console.log(postData);
-
-
-fetch('http://localhost:3000/sendwa', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(postData)
-})
-.then(res => res.json())
-.then(data => console.log(data))
-.catch(err => console.log(err));
-
-// fetch('http://localhost:3000/sendwa', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify(postData)
-// })
-//   .then(response => {
-//     if (!response.ok) {
-//       throw new Error("Gagal mengirim data");
-//     }
-//     return response.json();
-//   })
-//   .then(data => {
-//     console.log("Berhasil:", data);
-//     // lakukan sesuatu setelah berhasil (misalnya tampilkan notifikasi)
-//   })
-//   .catch(error => {
-//     console.error("Error:", error);
-//     // tampilkan pesan error ke user
-//   });
-}
-</script>
-
+      function showModal(message) {
+        const elMsg = document.getElementById("respMessage");
+        if (elMsg) elMsg.textContent = message || "";
+        const modalEl = document.getElementById("respModal");
+        if (!modalEl) return;
+        // const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+      }
+    </script>
+  </body>
 </html>
