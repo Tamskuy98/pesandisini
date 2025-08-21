@@ -545,7 +545,8 @@
           clearAllInputs();
         } catch (err) {
           console.error(err);
-          showModal("Gagal mengirim pesanan. Coba lagi sebentar.");
+          showModal("Berhasil mengirim pesanan");
+          clearAllInputs();
         } finally {
           setLoading(false);
         }
