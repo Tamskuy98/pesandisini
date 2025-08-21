@@ -515,14 +515,23 @@
           return;
         }
 
-        const payload = { numberPhone, order };
+        // const payload = { numberPhone, order };
+
+        const postData = {
+           data: [
+                  { numberPhone: numberPhone },
+                  { order: order }
+                ]
+              };
+
 
         setLoading(true);
         try {
           const res = await fetch("https://pesandisinibe-production.up.railway.app/sendwa", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
+            // body: JSON.stringify(payload)
+            body: JSON.stringify(postData)
           });
 
           if (!res.ok) {
