@@ -365,20 +365,20 @@
                   </div>
 
                   <!-- center numberPhone -->
-                 <div class="col-lg-6 mb-5">
+                 <!-- <div class="col-lg-6 mb-5">
                    <div class="d-flex flex-column align-items-center justify-content-center text-center">
                       <div class="mb-2 small"><p style="font-style: italic; font-size: 10px;"></p>Masukkan nomor telepon untuk konfirmasi pesanan (menggunakan format 62)</p></div>
                         <input id="numberPhone" type="text" class="form-control w-75" placeholder="cth: 62813834744xxxx" />
                       </div>
                    </div>   
-                 </div>
+                 </div> -->
 
                   <!-- center buttonPesan -->
                   <div class="col-lg-6">
                     <div class="d-flex align-items-center">
                       <a
                         href="#"
-                        onclick="kirimPesanWABot()"
+                        onclick="kirimPesanWA()"
                         class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft"
                         >PESAN</a
                       >
@@ -428,7 +428,7 @@
       const getValue = (id) => document.getElementById(id).value || "";
 
       const pesan = `
- Halo Kak Admin 🙌
+ Halo Kak Admin Rajacirengbekasi🙌
  Saya ingin melakukan pemesanan dengan rincian sebagai berikut:
 
   List pesanan
@@ -442,7 +442,7 @@
 * Usus: ${getValue("usus")}
 * Seblak: ${getValue("seblak")}
 
-Mohon konfirmasi total dan informasi pembayaran ya, Kak. Terima kasih!
+Mohon balas dan konfirmasi pengiriman dan informasi pembayaran nya ya, Kak. Terima kasih!
   `;
 
       const encodedPesan = encodeURIComponent(pesan);
@@ -531,29 +531,40 @@ const postData = {
   ]
 };
 
+
 console.log(postData);
+
 
 fetch('http://localhost:3000/sendwa', {
   method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
+  headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(postData)
 })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("Gagal mengirim data");
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log("Berhasil:", data);
-    // lakukan sesuatu setelah berhasil (misalnya tampilkan notifikasi)
-  })
-  .catch(error => {
-    console.error("Error:", error);
-    // tampilkan pesan error ke user
-  });
+.then(res => res.json())
+.then(data => console.log(data))
+.catch(err => console.log(err));
+
+// fetch('http://localhost:3000/sendwa', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify(postData)
+// })
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error("Gagal mengirim data");
+//     }
+//     return response.json();
+//   })
+//   .then(data => {
+//     console.log("Berhasil:", data);
+//     // lakukan sesuatu setelah berhasil (misalnya tampilkan notifikasi)
+//   })
+//   .catch(error => {
+//     console.error("Error:", error);
+//     // tampilkan pesan error ke user
+//   });
 }
 </script>
 
